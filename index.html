@@ -50,6 +50,42 @@
 </head>
 
 <body>
+    <style>
+        #too-late {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.75);
+            color: white;
+            font-size: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            font-family: 'Teko', sans-serif;
+            font-weight: bold;
+        }
+
+        #too-late:after {
+            font-family: sans-serif;
+            font-weight: normal;
+            content: 'X';
+            position: relative;
+            top: -100px;
+            right: -50px;
+            cursor: pointer;
+            font-size: 20px;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            border: 1px solid white;
+            border-radius: 32.5px;
+            text-align: center;
+        }
+    </style>
+    <div id="too-late">Sorry, verhuurd!</div>
 
     <div class="page-wrapper">
         <header class="main-header">
@@ -1026,6 +1062,10 @@
 
             return false;
         });
+
+      $('#too-late').click(function() {
+        $('#too-late').remove();
+      });
     </script>
 </body>
 
